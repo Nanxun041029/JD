@@ -19,9 +19,8 @@ const App = () => (
       <Route path="/gouwuche" component={Gouwuche}/>
       <Route path="/dingdan" component={Dingdan}/>
       <Route path="/wode" component={Wode}/>
-      <hr/>
 
-    <ul>
+    <ul className="it-ul">
         <li><NavLink activeClassName="green" exact to="/">
            <p>icon</p> 首页
         </NavLink></li>

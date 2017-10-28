@@ -1,0 +1,8 @@
+@function px2rem($px){
+  @return $px/100px *1rem;
+}
+
+
+#wode h1{
+	height: px2rem(60px);
+}

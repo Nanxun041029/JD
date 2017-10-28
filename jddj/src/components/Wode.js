@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
-import '../style/wode.css'
+import '../style/wode.scss'
 
 class WodeUI extends Component{
 	componentDidMount(){

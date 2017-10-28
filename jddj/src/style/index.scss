@@ -1,0 +1,16 @@
+@function px2rem($px){
+  @return $px/100px *1rem;
+}
+*{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style: none;
+}
+#zy-box1 ul{
+	display: flex;
+}
+#zy-box1 ul li{
+	flex: 3;
+}

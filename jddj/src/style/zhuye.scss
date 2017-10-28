@@ -7,18 +7,15 @@ a{
 	color: #333;
 
 }
-li{
+.it-ul li{
 	list-style:none;
 	flex: 20%;
-/*	line-height: px2rem(50px);
-*/	text-align: center;
-
 
 }
-li p{
+.it-ul li p{
 	margin-bottom:0; 
 }
- ul{
+ .it-ul{
 	display: flex;
 	position: fixed;
 	bottom: 0;
@@ -26,7 +23,7 @@ li p{
 	height: px2rem(50px);
 	background: #fff;
 	border-top:px2rem(1px) solid #ccc;
-	padding-left:0;  
+	padding-left:px2rem(20px);  
 }
 .green{
 	color: green;

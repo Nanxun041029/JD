@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import '../style/gouwuche.scss'
 
 class GouwucheUI extends Component{
 	componentDidMount(){
@@ -8,7 +9,7 @@ class GouwucheUI extends Component{
 	}
 	render(){
 		return(
-			<div id="fenlai">
+			<div id="gouwuche">
 				<h1>你好， 我是购物车页面</h1>
 			</div>
 		)	
