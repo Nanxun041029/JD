@@ -1,7 +1,9 @@
-const  IndexReducer = (state=[],action)=>{
+const  IndexReducer = (state={},action)=>{
 		switch(action.type) {
 			case "INDEX_GET_DATA":
-				return action.payload;
+				console.log(action.payload)
+
+				return action.payload
 			default:
 				return state;
 		}

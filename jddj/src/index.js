@@ -7,13 +7,20 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore,combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 import IndexReducer from './reducers/IndexReducer'
+import ZmdReducer from './reducers/ZmdReducer'
+import Lunbo from './reducers/Lunbo'
+import Lunbo1 from './reducers/Lunbo1'
 
 
 
 
 
 const recuders = combineReducers({
-	list:IndexReducer
+	list:IndexReducer,
+	list1:IndexReducer,
+	lbt:ZmdReducer,
+	sk:Lunbo,
+	sl:Lunbo1
 })
 const store = createStore(recuders,{})
 

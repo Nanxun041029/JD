@@ -2,43 +2,103 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import '../style/index.scss'
+import Zoumadeng from './zoumadeng'
+import Lunbo from './Lunbo'
+import Lunbo1 from './Lunbo1'
+
 class IndexUI extends Component{
 	componentDidMount(){
 		this.props.getData();
 	}
 	render(){
+			var items = null;
+			 	if(this.props.list.list){
+		 		items = 
+					
+					this.props.list.list.map((item,index)=>{
+						return <li key={item + index}>
+							<img src={item.floorCellData.imgUrl}/>
+							<p>{item.floorCellData.title}</p>
+						</li>
+
+					})	
+		 }
+		 	var items2 = null;
+		 		if(this.props.list.list1){
+		 		items2 = this.props.list.list1.map((item,index)=>{
+		 				if(item.floorCellData){
+		 				console.log(this.props.list.list1)
+						 return <li key={item.title}>
+						 		<h2>{item.floorCellData.title}</h2>
+						 		<p>{item.floorCellData.words}</p>
+									<img src={item.floorCellData.imgUrl}/>
+								</li>
+						}
+					})
+
+		 		}
+		 	var items1 = null;
+		 if(this.props.list.list1){
+		 		items1 = this.props.list.list1.map((item,index)=>{
+		 				if(item.dataObj){
+						 return <li key={item}>
+									<h1>{item.dataObj.title}</h1>
+									<p>{item.dataObj.adwords}</p>
+									<img src={item.dataObj.imgUrl}/>
+								</li>
+						}
+					})
+
+		 		}
+
 		return(
-			<div id="zhuye">
-			<div id="zy-box1">
+
+<div id="zhuye">
+	<div id="zy-box1">
 				<ul>
 					<li><span>icon</span>
 					大连软
 					<span>icon</span>
 					</li>
 					<li>
-					<input type="text" value="附近的商家" />
+					<span>icon</span> 附近商家商品
 					</li>
 					<li>
 						<span>icon 铃铛</span>
 					</li>
 				</ul>
 			</div>
+		<div>
+			<Zoumadeng />
+		</div>
+
+		<div id="zy-box2">
 			<ul>
-				{
-				this.props.list.map((item,index)=>{
-					return <li key={item.timer}>
-								{item.timer}
-							</li>
-				})
-				}
+				{items}
+
 			</ul>
-			</div>
+		</div>
+		<Lunbo/>
+
+		<div id="zy-box3">
+			<ul>
+				{items1}
+				{items2}
+
+			</ul>
+		</div>
+		<Lunbo1/>
+		<div className="footer">
+		</div>
+		
+</div>
 		)	
 	}
 }
 const mapStateToProps = (state)=>{
 	return {
-	list:state.list
+	list:state.list,
+	list1:state.list1
 	}
 
 }
@@ -51,7 +111,10 @@ const mapDispatchToProps = (dispatch) => {
 				console.log(res)
 				dispatch({
 					type:"INDEX_GET_DATA",
-					payload:res.data.result.data
+					payload:{
+					list:res.data.result.data[1].data,
+					list1:res.data.result.data[3].data
+					}
 				})
 			})
 		}
