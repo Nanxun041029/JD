@@ -22,19 +22,19 @@ const App = () => (
 
     <ul className="it-ul">
         <li><NavLink activeClassName="green" exact to="/">
-           <p>icon</p> 首页
+           <p className="iconfont">&#xe608;</p> 首页
         </NavLink></li>
         <li><NavLink  activeClassName="green" to="/fenlei">
-         <p>icon</p>  分类
+         <p className="iconfont">&#xe600;</p>  分类
         </NavLink></li>
         <li><NavLink activeClassName="green" to="/gouwuche">
-          <p>icon</p> 购物车
+          <p className="iconfont">&#xe601;</p> 购物车
         </NavLink></li>
         <li><NavLink activeClassName="green" to="/dingdan">
-          <p>icon</p> 订单
+          <p className="iconfont">&#xe6c1;</p> 订单
         </NavLink></li>
         <li><NavLink activeClassName="green" to="/wode">
-          <p>icon</p>   我的
+          <p className="iconfont">&#xe61c;</p>   我的
         </NavLink></li>
       </ul>
 
