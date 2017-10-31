@@ -9,13 +9,26 @@ import IndexReducer from './reducers/IndexReducer'
 import FenleiReducer from './reducers/FenleiReducer'
 
 
+import ZmdReducer from './reducers/ZmdReducer'
+import Lunbo from './reducers/Lunbo'
+import Lunbo1 from './reducers/Lunbo1'
+import Index_listReducers from './reducers/Index_listReducers'
+import LoginReducers from './reducers/LoginReducers'
+
+
 
 
 
 const recuders = combineReducers({
 	list:IndexReducer,
 	lists:FenleiReducer,
-	groupList:FenleiReducer
+	groupList:FenleiReducer,
+	list1:IndexReducer,
+	lbt:ZmdReducer,
+	sk:Lunbo,
+	sl:Lunbo1,
+	shop:Index_listReducers,
+	login:LoginReducers
 })
 const store = createStore(recuders,{})
 
