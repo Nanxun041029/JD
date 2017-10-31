@@ -2,6 +2,13 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import '../style/wode.scss'
+import Denglu from './Denglu'
+import Zhuce from './Zhuce'
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink
+} from 'react-router-dom'
 
 class WodeUI extends Component{
 	componentDidMount(){
@@ -12,7 +19,16 @@ class WodeUI extends Component{
 			<div id="wode">
 				 <div className="st">
 				 	<i className="logo"></i>
-				 	<span className="login">登录/注册</span>
+				 	
+				 	<span className="login">
+						<NavLink to="/denglu">
+				 			登录
+				 		</NavLink>	
+				 	/
+				 	<NavLink to="/zhuce">
+				 		注册
+				 	</NavLink>
+				 	</span>
 				 	<div className="um">
 				 		<label>icon</label>
 				 		<label>icon</label>

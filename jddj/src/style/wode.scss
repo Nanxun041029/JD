@@ -1,8 +1,10 @@
 @function px2rem($px){
   @return $px/100px *1rem;
 }
-
-
+.login a{color:white}
+#wode{
+	background: #f4f4f4;
+}
 #wode .st{
 	position: relative;
 	padding-top: px2rem(24px);

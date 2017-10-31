@@ -25,11 +25,10 @@ class Index_listUI extends Component{
 
 			                      }else{
 			                      	items = null;
-			                      	console.log("1")
 			                      }
 
 
-						return <li key={item+index}>
+						return <li key={item.floorCellData.imgUrl}>
 							<div className="shop_box1">
 								<span>
 									<img src={item.floorCellData.imgUrl}/>
@@ -62,7 +61,7 @@ class Index_listUI extends Component{
 									<div className="bo">
 									{item.floorCellData.tags.map((it,index)=>{
 									
-											return <div key={it.inSale}>
+											return <div key={it.name}>
 												<span className="jj">{it.iconText}</span>
 												<span className="gg">{it.words}</span>
 											</div>

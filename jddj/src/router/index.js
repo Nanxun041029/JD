@@ -9,8 +9,8 @@ import Fenlei from '../components/Fenlei'
 import Gouwuche from '../components/Gouwuche'
 import Dingdan from '../components/Dingdan'
 import Wode from '../components/Wode'
-
-
+import Denglu from '../components/Denglu'
+import Zhuce from '../components/Zhuce'
 const App = () => (
   <Router id="router-index">
     <div>
@@ -19,6 +19,8 @@ const App = () => (
       <Route path="/gouwuche" component={Gouwuche}/>
       <Route path="/dingdan" component={Dingdan}/>
       <Route path="/wode" component={Wode}/>
+      <Route path="/denglu" component={Denglu}/>
+      <Route path="/zhuce" component={Zhuce}/>      
 
     <ul className="it-ul">
         <li><NavLink activeClassName="green" exact to="/">
