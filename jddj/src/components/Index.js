@@ -5,6 +5,7 @@ import '../style/index.scss'
 import Zoumadeng from './zoumadeng'
 import Lunbo from './Lunbo'
 import Lunbo1 from './Lunbo1'
+import Index_list from './Index_list'
 
 class IndexUI extends Component{
 	componentDidMount(){
@@ -27,7 +28,6 @@ class IndexUI extends Component{
 		 		if(this.props.list.list1){
 		 		items2 = this.props.list.list1.map((item,index)=>{
 		 				if(item.floorCellData){
-		 				console.log(this.props.list.list1)
 						 return <li key={item.title}>
 						 		<h2>{item.floorCellData.title}</h2>
 						 		<p>{item.floorCellData.words}</p>
@@ -57,11 +57,11 @@ class IndexUI extends Component{
 	<div id="zy-box1">
 				<ul>
 					<li><span>icon</span>
-					大连软
-					<span>icon</span>
+					    大连软
+						<span>icon</span>
 					</li>
 					<li>
-					<span>icon</span> 附近商家商品
+						<span>icon</span> 附近商家商品
 					</li>
 					<li>
 						<span>icon 铃铛</span>
@@ -74,8 +74,7 @@ class IndexUI extends Component{
 
 		<div id="zy-box2">
 			<ul>
-				{items}
-
+				{items} 
 			</ul>
 		</div>
 		<Lunbo/>
@@ -88,6 +87,11 @@ class IndexUI extends Component{
 			</ul>
 		</div>
 		<Lunbo1/>
+
+		<div id="zy-box4">
+			<span>附近的店铺</span>
+		</div>
+		<Index_list />
 		<div className="footer">
 		</div>
 		
@@ -108,12 +112,11 @@ const mapDispatchToProps = (dispatch) => {
 		getData:function(){
 			axios.get('/client?_djrandom=15091069702541&functionId=indexh5%2FgetIndex&body=%7B%22address%22%3A%22%E5%A4%A7%E8%BF%9E%E8%BD%AF%E4%BB%B6%E5%9B%AD%E8%85%BE%E9%A3%9E%E5%9B%AD%E5%8C%BA%22%2C%22city%22%3A%22%E5%A4%A7%E8%BF%9E%E5%B8%82%22%2C%22longitude%22%3A121.51744%2C%22latitude%22%3A38.84722%2C%22coordType%22%3A%222%22%2C%22h5From%22%3A%22%22%2C%22isglb%22%3A%22%22%2C%22currentPage%22%3A%22%22%2C%22storeId%22%3A%22%22%2C%22activityId%22%3A%22%22%7D&platCode=H5&appVersion=4.7.0&appName=paidaojia')
 			.then((res)=>{
-				console.log(res)
 				dispatch({
 					type:"INDEX_GET_DATA",
 					payload:{
 					list:res.data.result.data[1].data,
-					list1:res.data.result.data[3].data
+					list1:res.data.result.data[4].data
 					}
 				})
 			})

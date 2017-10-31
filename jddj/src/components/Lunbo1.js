@@ -16,6 +16,7 @@ class LunboUI extends Component{
 	      className="my-carousel" autoplay={true} infinite
 	    >
 	      {this.props.sl.map((item,index)=>{
+	      	console.log(this.props.sl)
 	      	return <div key={item+index} className="ll">
 	      	 	<img src={item.floorCellData.imgUrl} />
 	      	</div>
@@ -42,7 +43,7 @@ const mapDispatchToProps = (dispatch) => {
 				console.log(res)
 				dispatch({
 					type:"LB1_GET_DATA",
-					payload:res.data.result.data[4].data
+					payload:res.data.result.data[3].data
 				})
 			})
 		}
