@@ -10,8 +10,19 @@ class DingdanUI extends Component{
 	render(){
 		return(
 			<div id="dingdan">
-				<h1>你好， 我是订单页面</h1>
-			</div>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<div>
+										<br/>
+										登录后才能查看订单哦～
+										<a href="">立即登录</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>					</div>
 		)	
 	}
 }

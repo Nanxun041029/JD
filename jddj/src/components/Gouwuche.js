@@ -10,7 +10,20 @@ class GouwucheUI extends Component{
 	render(){
 		return(
 			<div id="gouwuche">
-				<h1>你好， 我是购物车页面</h1>
+					<table>
+						<tbody>
+							<tr>
+								<td>
+									<div>
+										购物车空空如也哦～
+										<br/>
+										登录后将同步购物车中商品
+										<a href="">立即登录</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>			
 			</div>
 		)	
 	}
