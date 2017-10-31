@@ -3,6 +3,135 @@
 }
 
 
-#wode h1{
-	height: px2rem(60px);
+#wode .st{
+	position: relative;
+	padding-top: px2rem(24px);
+	min-height: px2rem(91px);
+	color: #fff;
+	background: url(../images/login.png)center bottom no-repeat;
+	background-size:cover;
+	overflow: hidden; 
+	background-color: #fff;
 }
+#wode .st .logo{
+	background: url(../images/logo.png) no-repeat;
+	background-size: auto px2rem(72px);
+	display: inline-block;
+	width: px2rem(72px);
+	height: px2rem(72px);
+	margin: 0 0 0 px2rem(16px);
+	border-radius: px2rem(50px);
+	text-align: center; 
+}
+#wode .st .login{
+	display: inline-block;
+	height: px2rem(16px);
+	padding: px2rem(7px) px2rem(10px);
+	color: #fff;
+	border-radius: px2rem(2px);
+	font-size: px2rem(14px);
+	line-height: px2rem(16px);
+	background-color:#69c575;
+	margin-left: px2rem(5px); 
+	position: absolute;
+	top: px2rem(47px);
+	left: px2rem(90px);
+}
+#wode .st .um{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: px2rem(50px);
+	z-index: 20;
+}
+#wode .st .um label:nth-child(1){
+	z-index: 2;
+	display: inline-block;
+	position: absolute;
+	right: px2rem(40px);
+	top: px2rem(-5px);
+	padding: px2rem(20px) 0 px2rem(20px) px2rem(20px);
+	
+}
+#wode .st .um label:nth-child(2){
+	z-index: 2;
+	display: inline-block;
+	position: absolute;
+	right:0;
+	top: px2rem(-5px);
+	padding: px2rem(20px) 0 px2rem(20px) px2rem(20px);
+	
+}
+#wode .t0{
+	margin-bottom: px2rem(10px);
+	padding-left: px2rem(15px);
+	background-color:white; 
+}
+#wode .t0 ul{
+	padding-top: px2rem(20px);
+	padding-bottom: px2rem(12px);
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 15;
+	background: #fff;
+	display: flex;
+}
+#wode .t0 ul li{
+	position: relative;
+	text-align: center;
+	flex: 3;
+}
+#wode .t0 ul li:nth-child(1) i{
+	background: url(../images/qianbao.png)no-repeat;
+	position: relative;
+	left: 50%;
+	background-size:px2rem(25px) px2rem(25px);
+	display: block;
+	width: px2rem(25px);
+	height: px2rem(25px);
+	margin-left: px2rem(-12px);
+}
+#wode .t0 ul li i{
+	display: block;
+	height: px2rem(25px);
+	line-height: px2rem(25px);
+	font-size: px2rem(18px);
+	content: #323232;
+}
+#wode .t0 ul li b{
+	font-size: px2rem(12px);
+}
+#wode .b2{
+	background: url(../images/hongbao.png)no-repeat;
+	height: px2rem(75px);
+	position: relative;
+	margin-top: 100px;
+	background-size:100%; 
+}
+#wode .t5{
+	margin: px2rem(10px) 0 ;
+	background-color: white;
+	margin-bottom: 100px;
+}
+#wode .t5 a{
+	display: inline-block;
+	padding: px2rem(25px) 0;
+	width: 25%;
+	border-bottom: 1px solid #e8e8e8;
+	text-align: center;
+	line-height: px2rem(35px);
+}
+#wode .t5 img{
+	background-size:px2rem(25px) px2rem(25px);
+	display: block;
+	width: px2rem(25px);
+	height:  px2rem(25px);
+	margin:0 auto;
+}
+
+
+
+
+
