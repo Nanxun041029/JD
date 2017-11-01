@@ -29,7 +29,8 @@ const recuders = combineReducers({
 	sl:Lunbo1,
 	shop:Index_listReducers,
 	login:LoginReducers,
-	xq:Xiangqing
+	xq:Xiangqing,
+	lb:Xiangqing
 })
 const store = createStore(recuders,{})
 
