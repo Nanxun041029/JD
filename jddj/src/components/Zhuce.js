@@ -17,7 +17,7 @@ class ZhuceUI extends Component{
 				<div className="zhuce1">
 					<div className="yi">
 						<span className="zh">账号</span>
-						<input className="form-control" id="inputEmail3" placeholder="请输入账号"/>
+						<input className="form-control" id="inputEmail3" placeholder="请输入账号" />
 					</div>
 					<div className="er">
 						<span className="mm">密码</span>
@@ -40,6 +40,10 @@ const mapStateToProps = (state)=>{
 const mapDispatchToProps = (dispatch) => {
 	return {
 		getData:function(){
+					axios.post("/api/one","username="+this.username+"&password="+this.password)
+			.then((res)=>{
+
+			})
 		}
 	}
 }

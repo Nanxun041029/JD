@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import Xiangqing from './Xiangqing'
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink
+} from 'react-router-dom'
 
 
 class Index_listUI extends Component{
@@ -28,7 +34,8 @@ class Index_listUI extends Component{
 			                      }
 
 
-						return <li key={item.floorCellData.imgUrl}>
+						return <NavLink to="/xiangqing">
+						<li key={item.floorCellData.imgUrl} >
 							<div className="shop_box1">
 								<span>
 									<img src={item.floorCellData.imgUrl}/>
@@ -66,7 +73,6 @@ class Index_listUI extends Component{
 												<span className="gg">{it.words}</span>
 											</div>
 											
-								
 										})}
 									</div>
 
@@ -78,6 +84,7 @@ class Index_listUI extends Component{
 
 							</div>
 								</li>
+						</NavLink>
 					})
 		return(
 <div id="index_list">

@@ -28,7 +28,7 @@ class IndexUI extends Component{
 		 		if(this.props.list.list1){
 		 		items2 = this.props.list.list1.map((item,index)=>{
 		 				if(item.floorCellData){
-						 return <li key={item.floorCellData.title}>
+						 return <li key={item.floorCellData.words}>
 						 		<h2>{item.floorCellData.title}</h2>
 						 		<p>{item.floorCellData.words}</p>
 									<img src={item.floorCellData.imgUrl}/>
