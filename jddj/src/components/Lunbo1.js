@@ -1,8 +1,8 @@
-import { Carousel, WhiteSpace } from 'antd-mobile';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
-
+import {Carousel} from 'antd'
+import 'antd/dist/antd.css'
 
 class LunboUI extends Component{
 	componentDidMount(){
@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch) => {
 				console.log(res)
 				dispatch({
 					type:"LB1_GET_DATA",
-					payload:res.data.result.data[3].data
+					payload:res.data.result.data[5].data
 				})
 			})
 		}
