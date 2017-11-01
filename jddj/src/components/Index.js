@@ -41,7 +41,7 @@ class IndexUI extends Component{
 		 if(this.props.list.list1){
 		 		items1 = this.props.list.list1.map((item,index)=>{
 		 				if(item.dataObj){
-						 return <li key={item}>
+						 return <li key={item+index}>
 									<h1>{item.dataObj.title}</h1>
 									<p>{item.dataObj.adwords}</p>
 									<img src={item.dataObj.imgUrl}/>

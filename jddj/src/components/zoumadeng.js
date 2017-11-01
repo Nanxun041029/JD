@@ -1,8 +1,8 @@
-import { Carousel, WhiteSpace } from 'antd-mobile';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
-
+import {Carousel} from 'antd'
+import 'antd/dist/antd.css'
 
 class ZoumadengUI extends Component{
 	componentDidMount(){
