@@ -22,7 +22,7 @@ const App = () => (
       <Route path="/wode" component={Wode}/>
       <Route path="/denglu" component={Denglu}/>
       <Route path="/zhuce" component={Zhuce}/>
-      <Route path="/xiangqing" component={Xiangqing}/>        
+      <Route path="/xiangqing/:storeId" component={Xiangqing}/>        
 
     <ul className="it-ul">
         <li><NavLink activeClassName="green" exact to="/">

@@ -20,13 +20,13 @@ class Index_listUI extends Component{
 		 	  if(item.floorCellData.skus){
 				items =item.floorCellData.skus.map((ie,index)=>{
 					
-									return <a href="" key={ie.skuId} className="a9d">
+									return <div href="" key={ie.skuId} className="a9d">
 												<span className="d0">
 											<img src={ie.imgUrl}/>
 											<span className="cz">{ie.priceDesc}</span>
 												</span>
 												<span className="d1">¥{ie.realTimePrice}</span>
-											</a>
+											</div>
 										})
 
 			                      }else{
@@ -34,8 +34,8 @@ class Index_listUI extends Component{
 			                      }
 
 
-						return <NavLink to="/xiangqing">
-						<li key={item.floorCellData.imgUrl} >
+						return <li key={item.floorCellData.imgUrl} >
+							<NavLink to={"/xiangqing/"+item.floorCellData.params.storeId}>
 							<div className="shop_box1">
 								<span>
 									<img src={item.floorCellData.imgUrl}/>
@@ -83,8 +83,8 @@ class Index_listUI extends Component{
 								</div>
 
 							</div>
-								</li>
 						</NavLink>
+								</li>
 					})
 		return(
 <div id="index_list">

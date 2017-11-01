@@ -14,7 +14,7 @@ import Lunbo from './reducers/Lunbo'
 import Lunbo1 from './reducers/Lunbo1'
 import Index_listReducers from './reducers/Index_listReducers'
 import LoginReducers from './reducers/LoginReducers'
-
+import Xiangqing from './reducers/Xiangqing'
 
 
 
@@ -28,7 +28,8 @@ const recuders = combineReducers({
 	sk:Lunbo,
 	sl:Lunbo1,
 	shop:Index_listReducers,
-	login:LoginReducers
+	login:LoginReducers,
+	xq:Xiangqing
 })
 const store = createStore(recuders,{})
 
