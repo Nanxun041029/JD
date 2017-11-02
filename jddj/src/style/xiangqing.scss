@@ -168,8 +168,10 @@ header,footer,nav, section,aside,main,figure,figcaption,article{display:block;}
 	font-size: px2rem(9px);
 	display: list-item;
 	text-align: -webkit-match-parent;
+	transition: all 5s linear 0s; 
+
 }
-#xq .a01 ul li strong{
+#xq .a01 ul li .a1w{
 	display: -webkit-box;
 	width: px2rem(70px);
 	height: px2rem(46px);
@@ -182,6 +184,31 @@ header,footer,nav, section,aside,main,figure,figcaption,article{display:block;}
 	-webkit-box-pack:center;
 
 }
+#xq .a01 ul li .a1z{
+	display: block;
+	overflow: hidden;
+	position: relative;
+	background: #fff;
+	height: auto;
+
+}
+#xq .a01 ul li .a1z span{
+	display: -webkit-box;
+	display: block;
+	width: px2rem(70px);
+	height: px2rem(0px);
+	line-height: 46px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background: #fff;
+	transition: all .5s linear 0s; 
+	text-align: center;
+
+}
+
+
+
+
 
 
 

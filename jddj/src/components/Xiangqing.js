@@ -4,10 +4,39 @@ import axios from 'axios';
 import '../style/xiangqing.scss'
 
 class XiangqingUI extends Component{
+	constructor(){
+		super();
+		this.liebiaoTo = this.liebiaoTo.bind(this)
+	}
+	liebiaoTo(){
+	 		 		var uls = document.querySelector('.ulbig')
+	 		 			uls.onclick=function(event){
+	 		 				var event = event||window.event;
+	 		 				var target = event.target||event.srcElement;
+	 		 				
+	 		 				if(target.className==="a1w"){
+	 		 					var lis = target.parentNode
+	 		 					var a1z = lis.lastChild;
+	 		 					var sp = a1z.childNodes;
+	 		 						for(var sps = 0; sps<sp.length; sps++){
+	 		 							sp[sps].style.height==='46px';
+	 		 							(sp[sps].style.height==='46px')?(sp[sps].style.height='0px'):(sp[sps].style.height='46px')
+	 		 							}
+	 		 						 		 				
+	 		 						 		 			}
+	 		 				
+	 		 			}
+	 		 			}
 	componentDidMount(){
 		this.props.getData();
+
+
+	}
+	componentDidUpdate(){
+		this.liebiaoTo()
 	}
 	render(){
+
 	 var ck = null;
 	 var cb =null;
 	 var cv = null;
@@ -21,11 +50,28 @@ class XiangqingUI extends Component{
 	 	};
 	 	if(this.props.xq.lb){
 	 		cn = this.props.xq.lb.map((it,index)=>{
-	 		 return  <li key={it+index}>
-	 		 			<strong>{it.title}</strong>
+	 		if(it.childCategoryList !=[]){
+	 			var a = it.childCategoryList;
+	 			var an = [];
+	 			for(var i=0; i<a.length; i++){
+			 		var co = a[i].title;
+			 		an.push(co);
+			 		
+			 	
+	 			}
+	 		 return  <li key={it+index} className="lis" onClick={this.liebiaoTo}>
+	 		 			<strong className="a1w" >{it.title}</strong>
+	 		 			<strong className="a1z" >
+	 		 			{an.map((item,index)=>{
+	 		 				return <span key={item+index}>{item}</span>
+	 		 				
+	 		 			})}
+	 		 			</strong>
 	 				 </li>
-	 		}) 
-	 	}
+	 		
+	 		}
+	 	})}
+
 		return(
 			<div id="xq">
 			<div className="z4">
@@ -46,7 +92,7 @@ class XiangqingUI extends Component{
 						</p>
 					</div>
 					<div className="a0h">
-						<i class="ionfont">❤️</i>
+						<i className="ionfont">❤️</i>
 					</div>
 					<div className="ala">
 						<ul>
@@ -72,7 +118,7 @@ class XiangqingUI extends Component{
 							</div>
 						</div>
 						<div className="a01">
-						<ul>
+						<ul className="ulbig">
 							{cn}
 						</ul>
 					</div>
@@ -83,7 +129,9 @@ class XiangqingUI extends Component{
 			</div>
 		)	
 	}
+
 }
+		
 const mapStateToProps = (state)=>{
 	return {
 	xq:state.xq,
