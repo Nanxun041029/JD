@@ -112,7 +112,6 @@ const mapDispatchToProps = (dispatch) => {
 
 			axios.get('/client?_djrandom=15093523067183&functionId=zone%2FrecommendStoreList&body=%7B%22channelId%22%3A%22%22%2C%22city%22%3A%22%E5%A4%A7%E8%BF%9E%E5%B8%82%22%2C%22longitude%22%3A121.51744%2C%22latitude%22%3A38.84722%2C%22currentPage%22%3A1%2C%22pageSize%22%3A10%2C%22areaCode%22%3A573%2C%22coordType%22%3A%222%22%2C%22platform%22%3A%221%22%7D&platCode=H5&appVersion=4.7.0&appName=paidaojia')
 			.then((res)=>{
-				console.log(res)
 				dispatch({
 					type:"INDEX_LIST_GET_DATA",
 					payload:res.data.result.data.data

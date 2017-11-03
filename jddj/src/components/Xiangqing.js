@@ -79,6 +79,7 @@ class XiangqingUI extends Component{
 					.then((res)=>{
 						console.log(res)
 						that.state.list11 = res.data.result.searchResultVOList
+						that.state.list11 = res.data.result.searchResultVOList[1]
 						that.setState({
 							list11:that.state.list11
 						})
@@ -91,11 +92,11 @@ class XiangqingUI extends Component{
 	 		 				return <span key={item+index} onClick={(e)=>{
 
 	 		 	var that = this;
-	 		 	console.log(item.catId)
 	 		 		axios.get(`/client?_djrandom=15096203245655&functionId=productsearch%2Fsearch&body=%7B%22key%22%3A%22%22%2C%22catId%22%3A%22${item.catId}%22%2C%22storeId%22%3A%22${that.props.match.params.storeId}%22%2C%22sortType%22%3A1%2C%22page%22%3A1%2C%22pageSize%22%3A10%2C%22cartUuid%22%3A%22%22%2C%22promotLable%22%3A%22%22%2C%22timeTag%22%3A1509620190918%7D&appVersion=4.8.0&appName=paidaojia&platCode=H5&lng=121.51744&lat=38.84722&city_id=573`)
 					.then((res)=>{
 						console.log(res)
 						that.state.list11 = res.data.result.searchResultVOList
+						that.state.list11 = res.data.result.searchResultVOList[1]
 						that.setState({
 							list11:that.state.list11
 						})
@@ -211,7 +212,6 @@ const mapDispatchToProps = (dispatch) => {
 		getData:function(){
 			axios.get(`/client?_djrandom=15095142970701&functionId=store%2FstoreDetailV220&body=%7B%22storeId%22%3A%22${this.match.params.storeId}%22%2C%22skuId%22%3A%22%22%2C%22activityId%22%3A%22%22%2C%22promotionType%22%3A%22%22%2C%22longitude%22%3A121.51744%2C%22latitude%22%3A38.84722%7D&appVersion=4.7.0&appName=paidaojia&platCode=H5&lng=121.51744&lat=38.84722&city_id=573`)
 			.then((res)=>{
-				console.log(res)
 				dispatch({
 					type:"XQ_GET_DATA",
 					payload:{
