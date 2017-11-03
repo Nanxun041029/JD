@@ -35,7 +35,6 @@ router.post("/two",function(req,res){
   },function(error,result){
     if(!error){
       if(result.length > 0){
-      	req.session.dasb = result[0];
         res.cookie('userId',result[0].username);
         res.send(true);
 

@@ -12,6 +12,7 @@ import Wode from '../components/Wode'
 import Denglu from '../components/Denglu'
 import Zhuce from '../components/Zhuce'
 import Xiangqing from '../components/Xiangqing'
+import Xiangqing2 from '../components/Xiangqing_2'
 
 const App = () => (
   <Router id="router-index">
@@ -24,6 +25,7 @@ const App = () => (
       <Route path="/denglu" component={Denglu}/>
       <Route path="/zhuce" component={Zhuce}/>
       <Route path="/xiangqing/:storeId" component={Xiangqing}/>
+      <Route path="/xiangqing2/:Id" component={Xiangqing2}/>
     <ul className="it-ul">
         <li><NavLink activeClassName="green" exact to="/">
            <p className="iconfont">&#xe608;</p> 首页

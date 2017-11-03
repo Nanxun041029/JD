@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import '../style/xiangqing.scss'
+import Xiangqing2 from './Xiangqing_2'
 import {
   BrowserRouter as Router,
   Route,
   NavLink
 } from 'react-router-dom'
-import Xiangqing2 from './Xiangqing_2'
+
 
 class XiangqingUI extends Component{
 	constructor(){
@@ -40,6 +41,17 @@ class XiangqingUI extends Component{
 
 	componentDidMount(){
 		this.props.getData();
+	
+		var that = this;
+	 	axios.get(`/client?_djrandom=15096203245655&functionId=productsearch%2Fsearch&body=%7B%22key%22%3A%22%22%2C%22catId%22%3A%22%22%2C%22storeId%22%3A%22${that.props.match.params.storeId}%22%2C%22sortType%22%3A1%2C%22page%22%3A1%2C%22pageSize%22%3A10%2C%22cartUuid%22%3A%22%22%2C%22promotLable%22%3A%22%22%2C%22timeTag%22%3A1509620190918%7D&appVersion=4.8.0&appName=paidaojia&platCode=H5&lng=121.51744&lat=38.84722&city_id=573`)
+		.then((res)=>{
+		console.log(res)
+		that.state.list11 = res.data.result.searchResultVOList
+		that.setState({
+		list11:that.state.list11
+		})
+ })
+
 
 
 	}
@@ -79,7 +91,6 @@ class XiangqingUI extends Component{
 					.then((res)=>{
 						console.log(res)
 						that.state.list11 = res.data.result.searchResultVOList
-						that.state.list11 = res.data.result.searchResultVOList[1]
 						that.setState({
 							list11:that.state.list11
 						})
@@ -96,7 +107,6 @@ class XiangqingUI extends Component{
 					.then((res)=>{
 						console.log(res)
 						that.state.list11 = res.data.result.searchResultVOList
-						that.state.list11 = res.data.result.searchResultVOList[1]
 						that.setState({
 							list11:that.state.list11
 						})
@@ -164,6 +174,7 @@ class XiangqingUI extends Component{
 							<ul className="a1l">
 							{this.state.list11.map((itm,index)=>{
 						return	<li key={itm+index}>
+							<NavLink to={"/xiangqing2/"+itm.orgCode+itm.storeId+ itm.skuId}>
 									<span><img src={itm.imgUrl}/></span>
 									<dl>
 										<dt>
@@ -182,6 +193,7 @@ class XiangqingUI extends Component{
 											</label>
 										</dd>
 									</dl>
+									</NavLink>
 								</li>
 								})
 							}

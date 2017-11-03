@@ -15,7 +15,7 @@ import Lunbo1 from './reducers/Lunbo1'
 import Index_listReducers from './reducers/Index_listReducers'
 import LoginReducers from './reducers/LoginReducers'
 import Xiangqing from './reducers/Xiangqing'
-
+import Xiangqing2 from './reducers/Xq3'
 
 
 
@@ -30,9 +30,10 @@ const recuders = combineReducers({
 	shop:Index_listReducers,
 	login:LoginReducers,
 	xq:Xiangqing,
-	lb:Xiangqing
+	lb:Xiangqing,
+	xq3:Xiangqing2
 })
-const store = createStore(recuders,{})
+const store = createStore(recuders,{xq3:{}})
 
 function renderPage(){
 		ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));

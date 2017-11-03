@@ -11,8 +11,31 @@ import {
 } from 'react-router-dom'
 
 class WodeUI extends Component{
+			constructor(){
+		super();
+		this.tui = this.tui.bind(this)
+	}
 	componentDidMount(){
 		this.props.gotData();
+		var ck = document.cookie;
+		var userid = document.cookie.substring(68);
+		var p = document.querySelector(".login");
+		var t = document.querySelector(".tui")
+		if(userid){
+			p.innerText = userid;
+			t.style.display="block";
+		}
+
+	}
+	tui(){
+	var that = this; 
+    var keys=document.cookie.match(/[^ =;]+(?=\=)/g); 
+    if (keys) { 
+        for (var i = keys.length; i--;) 
+            document.cookie=keys[i]+'=0;expires=' + new Date( 0).toUTCString()
+            alert("退出成功") 
+       		 that.props.history.push('/')
+        } 
 	}
 	render(){
 		return(
@@ -29,6 +52,7 @@ class WodeUI extends Component{
 				 		注册
 				 	</NavLink>
 				 	</span>
+				 	<div className="tui" onClick={this.tui}>退出</div>
 				 	<div className="um">
 				 		<label>icon</label>
 				 		<label>icon</label>
