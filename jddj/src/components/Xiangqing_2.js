@@ -6,17 +6,70 @@ import {
   Route,
   NavLink
 } from 'react-router-dom'
+import '../style/xiangqing_2.scss'
+import {Carousel} from 'antd'
+import 'antd/dist/antd.css'
+
 
 class Xiangqing_2UI extends Component{
 	componentDidMount(){
 		this.props.getData();
-		console.log(this.props.xq3)
 	}
 	render(){
+			var it = null;
+			var ei =null;
+			var eo =null;
+			var ep =null;
+			if(this.props.xq3.image){
+				it=this.props.xq3.image.map((item,index)=>{
+				      	return <div key={item+index} className="ll">
+				      	 	<img src={item.big} />
+				      	</div>
+				      })}
+			if(this.props.xq3.storeInfo){
+				ei = this.props.xq3.skuPriceVO.basicPrice
+			}
+			if(this.props.xq3.skuPriceVO){
+				eo = this.props.xq3.storeInfo.storeName
+			}
+			if(this.props.xq3.skuPriceVO){
+				ep = this.props.xq3.skuPriceVO.mkPrice
+			}
+			
 		return(
-			<div id="Xiangqing_2">
-				<h1>caonima</h1>
-				{this.props.xq3.name}
+			<div id="xq2">
+				<div className="need-left-right-margin">
+				    <Carousel
+				      className="my-carousel" autoplay={true} infinite
+				    >
+				      {it}
+				    </Carousel>
+				    </div>
+				   <div className="e3">
+				   	<h1>{this.props.xq3.name}</h1>
+				   </div>
+
+				   <div className="ei">
+				   	<div>
+				   		<p><span>¥</span>{ei}</p>
+				   		<span className="ek">
+				   			加入购物车
+				   		</span>
+				   	</div>
+				   </div>
+				    <div className="f9">
+				    	<div className="fa">
+				    		{eo}
+				    	</div>
+				    	<div className="fb">
+				    		联系商家
+				    	</div>
+				    </div>
+				    <div className="gs">
+				    	<span>商品评价</span>
+				    	<em>{ep}</em>
+				    </div>
+
 			</div>
 		)	
 	}
