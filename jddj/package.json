@@ -107,6 +107,15 @@
         "^/client": "/client"
       },
       "ws": true
+    },
+    "/api": {
+      "target": "http://localhost:2999",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": "/api"
+      },
+      "ws": true
     }
+
   }
 }

@@ -79,7 +79,6 @@ const mapDispatchToProps = (dispatch) => {
 		gotData:function(){
 			axios.get('/client?_djrandom=15094174795702&functionId=mine%2FgetModuleInfo&body=%7B%22fromSource%22%3A2%2C%22channelType%22%3A8%2C%22cityId%22%3A573%2C%22platform%22%3A3%2C%22longtitude%22%3A121.51744%2C%22latitude%22%3A38.84722%7D&appVersion=4.7.0&appName=paidaojia&platCode=H5')
 			.then((res)=>{
-			console.log(res)
 				dispatch({
 					type:"LOGIN_GET_DATA",
 					payload:res.data.result.userModuleList

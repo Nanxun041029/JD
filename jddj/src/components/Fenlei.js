@@ -103,8 +103,6 @@ const mapDispatchToProps = (dispatch) => {
 		getData:function(){
 			axios.get('/client?_djrandom=15093237193832&functionId=homeSearch%2FtabCateList&body=%7B%22longitude%22%3A121.53528%2C%22latitude%22%3A38.89061%2C%22cityId%22%3A573%7D&appVersion=4.7.0&appName=paidaojia&platCode=H5')
 			.then((res)=>{
-				console.log(res)
-
 				dispatch({
 					type:"FENLEI_GET_DATA",
 					payload:{lists:res.data.result.firstTabCate,
