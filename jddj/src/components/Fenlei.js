@@ -13,7 +13,7 @@ class FenleiUI extends Component{
 		var divs = document.querySelectorAll('.list-one .right-big')
 		for (var i = 0; i < lis.length; i++) {
 			lis[0].className ='nameone nametwo'
-			var a =lis[i]
+			var a =lis[i] 
 			a.index = i
 			lis[i].onclick = function (){
 				for(var j = 0; j < chils.length; j++){
@@ -37,7 +37,7 @@ class FenleiUI extends Component{
 	componentDidUpdate(){
 		this.changeTo();
 	}
-	render(){
+		render(){
 	var listBig = null;
 	if(this.props.lists.lists){
 	listBig = this.props.lists.lists.map((item,index)=>{

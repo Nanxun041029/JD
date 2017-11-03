@@ -2,10 +2,20 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import '../style/xiangqing.scss'
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink
+} from 'react-router-dom'
+import Xiangqing2 from './Xiangqing_2'
 
 class XiangqingUI extends Component{
 	constructor(){
 		super();
+		this.state = {
+			list11:{},
+			list111:[]
+		}
 		this.liebiaoTo = this.liebiaoTo.bind(this)
 	}
 	liebiaoTo(){
@@ -27,6 +37,7 @@ class XiangqingUI extends Component{
 	 		 				
 	 		 			}
 	 		 			}
+
 	componentDidMount(){
 		this.props.getData();
 
@@ -38,7 +49,7 @@ class XiangqingUI extends Component{
 	render(){
 
 	 var ck = null;
-	 var cb =null;
+	 var cb = null;
 	 var cv = null;
 	 var cm = null;
 	 var cn = null;
@@ -53,20 +64,47 @@ class XiangqingUI extends Component{
 	 		if(it.childCategoryList !=[]){
 	 			var a = it.childCategoryList;
 	 			var an = [];
+	 			var ju = [];
 	 			for(var i=0; i<a.length; i++){
-			 		var co = a[i].title;
+			 		var co = a[i]
 			 		an.push(co);
-			 		
-			 	
 	 			}
-	 		 return  <li key={it+index} className="lis" onClick={this.liebiaoTo}>
+	 			for(var s=0; s<a.length; s++){
+	 				var catid = a[s];
+	 				ju.push(catid);
+	 			}
+	 		 return  <li key={it+index} className="lis" onClick={this.liebiaoTo} onClick={()=>{
+	 		 	var that = this;
+	 		 		axios.get(`/client?_djrandom=15096203245655&functionId=productsearch%2Fsearch&body=%7B%22key%22%3A%22%22%2C%22catId%22%3A%22${it.catId}%22%2C%22storeId%22%3A%22${that.props.match.params.storeId}%22%2C%22sortType%22%3A1%2C%22page%22%3A1%2C%22pageSize%22%3A10%2C%22cartUuid%22%3A%22%22%2C%22promotLable%22%3A%22%22%2C%22timeTag%22%3A1509620190918%7D&appVersion=4.8.0&appName=paidaojia&platCode=H5&lng=121.51744&lat=38.84722&city_id=573`)
+					.then((res)=>{
+						console.log(res)
+						that.state.list11 = res.data.result.searchResultVOList[1]
+						that.setState({
+							list11:that.state.list11
+						})
+					})
+							
+	 		 }}>
 	 		 			<strong className="a1w" >{it.title}</strong>
 	 		 			<strong className="a1z" >
 	 		 			{an.map((item,index)=>{
-	 		 				return <span key={item+index}>{item}</span>
-	 		 				
+	 		 				return <span key={item+index} onClick={(e)=>{
+
+	 		 	var that = this;
+	 		 	console.log(item.catId)
+	 		 		axios.get(`/client?_djrandom=15096203245655&functionId=productsearch%2Fsearch&body=%7B%22key%22%3A%22%22%2C%22catId%22%3A%22${item.catId}%22%2C%22storeId%22%3A%22${that.props.match.params.storeId}%22%2C%22sortType%22%3A1%2C%22page%22%3A1%2C%22pageSize%22%3A10%2C%22cartUuid%22%3A%22%22%2C%22promotLable%22%3A%22%22%2C%22timeTag%22%3A1509620190918%7D&appVersion=4.8.0&appName=paidaojia&platCode=H5&lng=121.51744&lat=38.84722&city_id=573`)
+					.then((res)=>{
+						console.log(res)
+						that.state.list11 = res.data.result.searchResultVOList[1]
+						that.setState({
+							list11:that.state.list11
+						})
+					})
+					e.stopPropagation();		
+	 		 }}>{item.title}</span>
 	 		 			})}
 	 		 			</strong>
+
 	 				 </li>
 	 		
 	 		}
@@ -121,6 +159,10 @@ class XiangqingUI extends Component{
 						<ul className="ulbig">
 							{cn}
 						</ul>
+						<div className="ceshi">{
+							this.state.list11.skuName
+						}
+						</div>
 					</div>
 
 					</div>
@@ -135,7 +177,8 @@ class XiangqingUI extends Component{
 const mapStateToProps = (state)=>{
 	return {
 	xq:state.xq,
-	lb:state.lb
+	lb:state.lb,
+	lb1:state.lb1
 	}
 }
 
@@ -149,7 +192,8 @@ const mapDispatchToProps = (dispatch) => {
 					type:"XQ_GET_DATA",
 					payload:{
 					xq:res.data.result.storeInfo,
-					lb:res.data.result.cateList
+					lb:res.data.result.cateList,
+					lb1:res.data.result.cateList.childCategoryList
 					}
 				})
 			})
