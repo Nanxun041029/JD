@@ -13,7 +13,7 @@ class XiangqingUI extends Component{
 	constructor(){
 		super();
 		this.state = {
-			list11:{},
+			list11:[],
 			list111:[]
 		}
 		this.liebiaoTo = this.liebiaoTo.bind(this)
@@ -78,7 +78,7 @@ class XiangqingUI extends Component{
 	 		 		axios.get(`/client?_djrandom=15096203245655&functionId=productsearch%2Fsearch&body=%7B%22key%22%3A%22%22%2C%22catId%22%3A%22${it.catId}%22%2C%22storeId%22%3A%22${that.props.match.params.storeId}%22%2C%22sortType%22%3A1%2C%22page%22%3A1%2C%22pageSize%22%3A10%2C%22cartUuid%22%3A%22%22%2C%22promotLable%22%3A%22%22%2C%22timeTag%22%3A1509620190918%7D&appVersion=4.8.0&appName=paidaojia&platCode=H5&lng=121.51744&lat=38.84722&city_id=573`)
 					.then((res)=>{
 						console.log(res)
-						that.state.list11 = res.data.result.searchResultVOList[1]
+						that.state.list11 = res.data.result.searchResultVOList
 						that.setState({
 							list11:that.state.list11
 						})
@@ -95,7 +95,7 @@ class XiangqingUI extends Component{
 	 		 		axios.get(`/client?_djrandom=15096203245655&functionId=productsearch%2Fsearch&body=%7B%22key%22%3A%22%22%2C%22catId%22%3A%22${item.catId}%22%2C%22storeId%22%3A%22${that.props.match.params.storeId}%22%2C%22sortType%22%3A1%2C%22page%22%3A1%2C%22pageSize%22%3A10%2C%22cartUuid%22%3A%22%22%2C%22promotLable%22%3A%22%22%2C%22timeTag%22%3A1509620190918%7D&appVersion=4.8.0&appName=paidaojia&platCode=H5&lng=121.51744&lat=38.84722&city_id=573`)
 					.then((res)=>{
 						console.log(res)
-						that.state.list11 = res.data.result.searchResultVOList[1]
+						that.state.list11 = res.data.result.searchResultVOList
 						that.setState({
 							list11:that.state.list11
 						})
@@ -156,12 +156,36 @@ class XiangqingUI extends Component{
 							</div>
 						</div>
 						<div className="a01">
-						<ul className="ulbig">
-							{cn}
-						</ul>
-						<div className="ceshi">{
-							this.state.list11.skuName
-						}
+							<ul className="ulbig">
+								{cn}
+							</ul>
+						<div className="ceshi">						
+							<ul className="a1l">
+							{this.state.list11.map((itm,index)=>{
+						return	<li key={itm+index}>
+									<span><img src={itm.imgUrl}/></span>
+									<dl>
+										<dt>
+											{itm.skuName}
+										</dt>
+										<dd>
+											<strong>
+												月售{itm.monthSales}件
+											</strong>
+										</dd>
+										<dd></dd>
+										<dd>
+											<label>
+												<em>¥</em>
+												{itm.realTimePrice}
+											</label>
+										</dd>
+									</dl>
+								</li>
+								})
+							}
+							</ul>
+
 						</div>
 					</div>
 

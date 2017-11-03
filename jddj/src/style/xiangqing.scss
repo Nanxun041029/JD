@@ -150,7 +150,7 @@ header,footer,nav, section,aside,main,figure,figcaption,article{display:block;}
 	overflow: hidden;
 	background: #fff;
 }
-#xq .a01 ul{
+#xq .a01 .ulbig{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -163,7 +163,7 @@ header,footer,nav, section,aside,main,figure,figcaption,article{display:block;}
 	background-color:#f4f4f4;
 
 }
-#xq .a01 ul li{
+#xq .a01 .ulbig li{
 	color: #666666;
 	font-size: px2rem(9px);
 	display: list-item;
@@ -171,7 +171,7 @@ header,footer,nav, section,aside,main,figure,figcaption,article{display:block;}
 	transition: all 5s linear 0s; 
 
 }
-#xq .a01 ul li .a1w{
+#xq .a01 .ulbig li .a1w{
 	display: -webkit-box;
 	width: px2rem(70px);
 	height: px2rem(46px);
@@ -184,7 +184,7 @@ header,footer,nav, section,aside,main,figure,figcaption,article{display:block;}
 	-webkit-box-pack:center;
 
 }
-#xq .a01 ul li .a1z{
+#xq .a01 .ulbig li .a1z{
 	display: block;
 	overflow: hidden;
 	position: relative;
@@ -192,7 +192,7 @@ header,footer,nav, section,aside,main,figure,figcaption,article{display:block;}
 	height: auto;
 
 }
-#xq .a01 ul li .a1z span{
+#xq .a01 .ulbig li .a1z span{
 	display: -webkit-box;
 	display: block;
 	width: px2rem(70px);
@@ -205,14 +205,77 @@ header,footer,nav, section,aside,main,figure,figcaption,article{display:block;}
 	text-align: center;
 
 }
+#xq .a01 .ulbig li:hover span{
+	border:1px dashed #e8e8e8;
+	border-top: none;
+	border-right: none; 
+	box-sizing: border-box;}
+#xq .a01 .ulbig li .a1z span:hover{
+	color: #47b34f;
+	border-left: 2px solid #47b34f;
+	border-bottom: 1px dashed #47b34f;
 
-.ceshi{
-	z-index:9999;
-	color:#000;
-	position:absolute;
-	top:200px;
-	left:200px;
 }
+
+#xq .ceshi{
+ 	position: absolute;
+ 	left: px2rem(84px);
+ 	right: 0;
+ 	top: 0;
+ 	bottom: 0;
+ 	z-index: 10;
+ 	background-color:#fff;
+ 	overflow: auto;
+ 	clear: both;
+ 	margin-bottom: 50px;
+}
+#xq .ceshi .a1l li{
+	position: relative;
+	padding-left:10px;
+	border-bottom: 1px solid #e8e8e8;
+
+
+}
+#xq .ceshi .a1l li span{
+	display: inline-block;
+	position: relative;
+	float: left;
+	padding-top: px2rem(4px);
+}
+#xq .ceshi .a1l li span img{
+	display: inline-block;
+	border-radius: px2rem(2px);
+	float: left;
+	background:#fff; 
+}
+#xq .ceshi .a1l li dl{
+	margin-left: px2rem(70px);
+}
+#xq .ceshi .a1l li dl dt{
+	font-size: px2rem(14px);
+	color: #333;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	padding-left: px2rem(5px);
+	max-height: px2rem(42px);
+	line-height: px2rem(21px);
+}
+#xq .ceshi .a1l li dl dd{
+	padding-left: px2rem(5px);
+	overflow: hidden;
+	padding-top: px2rem(3px);
+	padding-bottom: px2rem(1px);
+}
+#xq .ceshi .a1l li dl dd strong{
+	color: #ccc;
+	font-weight: 100;
+
+}
+#xq .ceshi .a1l li dl dd label{
+	color: red;
+	font-size: px2rem(14px);
+}
+
 
 
 
